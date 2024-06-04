@@ -1,7 +1,7 @@
 pipeline {
     agent {
         dockerfile {
-            additionalBuildArgs  '--build-arg ROS_DISTRO=humble --progress=plain'
+            additionalBuildArgs  '--build-arg ROS_DISTRO=humble --progress=plain --entrypoint=""'
         }
     }
     stages {
