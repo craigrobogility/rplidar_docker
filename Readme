@@ -1,0 +1,3 @@
+# Dockerfile for containerisation of the rplidar_ros package
+Pass your ros distribution using the ARG:
+    `--build-arg ROS_DISTRO=humble`
