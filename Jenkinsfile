@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ("Docker build") {
             steps {
-                sh("docker build --build-arg ROS_DISTRO=humble .")
+                sh("docker buildx build --platform linux/arm64 --build-arg ROS_DISTRO=humble .")
             }
         }
     }
