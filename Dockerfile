@@ -16,4 +16,4 @@ SHELL ["/bin/bash","-c"]
 RUN source /opt/ros/${ROS_DISTRO}/setup.bash && colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
 
 # launch ros package
-#CMD ["ros2", "launch", "rplidar_ros", "rplidar_a1_launch.py"]
+CMD ["ros2", "launch", "rplidar_ros", "rplidar_a1_launch.py"]
