@@ -1,14 +1,11 @@
 pipeline {
-    agent {
-        dockerfile {
-            additionalBuildArgs  '--build-arg ROS_DISTRO=humble --progress=plain '
-            args '--entrypoint=\'\''
-        }
-    }
-    stages {
-        stage ('nothing') {
-            steps {
-                sh 'ls -l'
+    agent any
+    {
+        stages {
+            stage ("Docker build") {
+                steps {
+                    sh("docker build --build-arg ROS_DISTRO=humble .")
+                }
             }
         }
     }
