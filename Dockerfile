@@ -1,5 +1,5 @@
-ARG ROS_DISTRO # override with --build-arg ROS_DISTRO=<something>
-FROM ros:${ROS_DISTRO}-ros-base-jammy
+ARG ROS_DISTRO=humble
+FROM ros:${ROS_DISTRO}-ros-base
 
 # install dependencies package
 RUN apt-get update && apt-get install -y git
