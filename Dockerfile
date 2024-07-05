@@ -2,7 +2,7 @@ ARG ROS_DISTRO=humble
 FROM ros:${ROS_DISTRO}-ros-base
 
 # install dependencies package
-RUN apt-get update && apt-get install -y git
+RUN apt-get update && apt-get install -y --no-install-recommends git
 
 WORKDIR /rplidar_ws
 

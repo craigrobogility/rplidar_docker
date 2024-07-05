@@ -1,3 +1,15 @@
 # Dockerfile for containerisation of the rplidar_ros package
 Pass your ros distribution using the ARG:
     `--build-arg ROS_DISTRO=humble`
+
+For example:
+    ``` bash
+    docker buildx build --platform linux/arm64 -t <namespace>:<repo>:latest --push  .
+    ```
+
+# Running the image
+    ``` bash 
+    docker run -it --rm -v /dev:/dev --device-cgroup-rule='c 188:* rmw' <namespace>:<repo>:latest bash -c "source /opt/ros/humble/setup.bash && source install/setup.bash && ros2 launch rplidar_ros rplidar_a1_launch.py"
+    ```
+
+
